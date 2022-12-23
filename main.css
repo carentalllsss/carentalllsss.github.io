@@ -1,0 +1,504 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: black;
+    --letters: white;
+    --lightgreen_hover: rgb(96, 167, 104);
+    --linear_color: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(35,51,41,1) 35%, rgba(99,212,113,1) 100%);
+    --transparent: rgba(0, 0, 0, 0.5);
+    --darkblue: rgba(2,0,36,1);
+    --footer: rgba(112, 110, 110, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background: var(--linear_color);
+}
+
+/* HEADER */
+header {
+    position: relative;
+}
+
+header::before {
+    position: absolute;
+    content: '';
+    background-image: url(/img/car1.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -8;
+    opacity: .5;
+}
+
+/* NAVBAR */
+.parent_navbar {
+    padding: 1vw 1.5vw;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    transition: 200ms ease-in-out background-color,
+                200ms ease-in-out box-shadow;
+    z-index: 999999999999;
+}
+
+.parent_navbar img {
+    margin-right: auto;
+    width: 8vw;
+}
+
+.parent_navbar ul {
+    display: block;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.child_footer,
+.child_footer ul {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
+
+.parent_navbar ul,
+.parent_navbar ul li a,
+.services_item a,
+.child_footer ul li,
+.child_footer ul li a {
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.3vw;
+    color: var(--white);
+    position: relative;
+}
+
+.parent_navbar ul li a::after,
+.services_item a::after,
+.child_footer ul li a::after {
+    content: '';
+    position: absolute;
+    background-color: var(--letters);
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+    transition: .3s;
+}
+
+.parent_navbar ul li a:hover::after,
+.services_item a:hover::after,
+.child_footer ul li a:hover::after {
+    width: 100%;
+}
+
+.hamburger {
+    display: none;
+}
+
+/* ON SCROLL NAVBAR BG */
+.navbarBg {
+    background-color: var(--black);
+    color: var(--letters);
+    box-shadow: 0 0 10px 10px var(--black);
+}
+
+#asd {
+    display: block;
+}
+
+#ads {
+    display: none;
+}
+
+.navbarBg ul li a {
+    color: var(--letters);
+}
+
+.header_container {
+    text-align: center;
+    padding: 5vw 5vw 0 5vw;
+}
+
+.header_container h1 {
+    margin-block: 5%;
+    font-size: 3vw;
+}
+
+.header_container span {
+    font-size: 1.8vw;
+}
+
+.parent_form {
+    display: flex;
+    flex-direction: column;
+    gap: 4vw;
+    padding-block: 8%;
+}
+
+.header_input {
+    display: flex;
+    gap: 2vw;
+}
+
+.header_input input,
+.parent_form button {
+    font-size: 2vw;
+    width: 25%;
+    padding: .5vw;
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
+}
+
+.header_input2 input {
+    width: 100%;
+}
+
+.btn button:hover {
+    background-color: var(--black);
+    color: var(--letters);
+}
+
+.parent_form > .btn {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* MAIN */
+
+/* CARS */
+#parent_cars {
+    text-align: center;
+    margin-top: 5vw;
+    font-size: 1.8vw;
+    color: var(--letters);
+}
+
+.container_cars h2 {
+    font-size: 1.3vw;
+    margin-top: 2vw;
+    padding-block: 1vw;
+    background-color: var(--transparent);
+}
+
+.container_compiler {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10vw 2vw 10vw;
+    gap: 2vw;
+    background: var(--transparent);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.container_compiler .item {
+    background-color: var(--darkblue);
+    padding: 1.5vw;
+    border-radius: 0 0 10px 10px;
+    height: 20vw;
+    overflow: hidden;
+    color: var(--lightgreen_hover);
+    transition: 1s ease-in-out background-color,
+                .5s ease-in-out height;
+}
+
+.container_compiler .item:hover {
+    height: 100%;
+    cursor: pointer;
+    color: var(--letters);
+    background-color: var(--lightgreen_hover);
+}
+
+.container_compiler img {
+    width: 20vw;
+    border-radius: 10px;
+}
+
+.suv_info {
+    text-align: left;
+}
+
+.suv_info p {
+    margin-block-start: 1vw;
+}
+
+.suv_info p:not(:first-child) {
+    font-size: 1.3vw;
+}
+
+.suv_info ul {
+    list-style: none;
+    padding-top: 1vw;
+}
+
+.suv_info li {
+    font-size: 1.3vw;
+    margin-block-start: 1vw;
+}
+
+/* SERVICES */
+#parent_cars h1 {
+    margin-bottom: 3vw;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8vw;
+    padding-block: 5vw;
+    background: var(--transparent);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+}
+
+.services_item img {
+    width: 15vw;
+}
+
+.services_item:last-of-type img {
+    width: 21vw;
+}
+
+.services_item p {
+    margin-top: 2vw;
+}
+
+/* FOOTER */
+footer {
+    background: var(--footer);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.2);
+    padding: 2vw 10vw 1vw 10vw;
+    margin-top: 5vw;
+    text-align: center;
+    color: var(--letters);
+}
+
+.copyright a {
+    text-decoration: none;
+    color: var(--letters);
+}
+
+.copyright a:hover {
+    color: var(--black);
+}
+
+.parent_footer {
+    display: flex;
+}
+
+.parent_footer img {
+    width: 10vw;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 426px) {
+    /* NAVBAR */
+    .parent_navbar {
+        background-color: var(--black);
+        box-shadow: 0 0 20px 20px var(--black);
+        padding: 2.5vw;
+    }
+
+    .parent_navbar ul {
+        flex-direction: column;
+        position: fixed;
+        left: -150%;
+        top: 75px;
+        width: 95%;
+        color: var(--letters);
+        background-color: var(--black);
+        box-shadow: 0 0 20px 20px var(--black);
+        transition: .3s;
+        gap: 8vw;
+        padding: 2vw;
+    }
+
+    .parent_navbar ul li a {
+        font-size: 5vw;
+    }
+
+    .parent_navbar ul.active {
+        left: 10px;
+    }
+
+    #asd {
+        display: none;
+    }
+
+    #ads {
+        display:block;
+    }
+
+    .parent_navbar img {
+        width: 20vw;
+        background-size: 20vw;
+    }
+
+    .parent_navbar ul,
+    .services_item a,
+    .child_footer ul li,
+    .child_footer ul li a {
+        font-size: 3vw;
+    }
+
+    .child_footer,
+    .child_footer ul {
+        flex-direction: column;
+        gap: 2vw;
+    }
+
+    /* HEADER */
+    header::before {
+        height: 280vw;
+    }
+
+    .header_container {
+        text-align: center;
+        padding: 20vw 5vw 0 5vw;
+    }
+
+    .header_container h1 {
+        font-size: 6.5vw;
+    }
+
+    .header_container span {
+        font-size: 3vw;
+    }
+
+    .header_input {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .header_input input {
+        width: 100%;
+    }
+
+    .header_input input {
+        font-size: 5vw;
+        padding: 2vw;
+    }
+
+    .header_input2 input {
+        width: 100%;
+    }
+
+    .parent_form {
+        gap: 2vw;
+    }
+
+    .parent_form button {
+        width: 50%;
+        font-size: 5vw;
+        padding: 2vw;
+        margin-block: 2vw;
+        border-style: none;
+    }
+
+    .hamburger{
+        display: block;
+        background-image: url("/img/open.png");
+        width: 20vw;
+        height: 10vw;
+        background-repeat:no-repeat;
+        background-size: 15vw;
+        background-position: center;
+    }
+
+    /* CARS */
+    #parent_cars h1 {
+        margin-top: 20vw;
+        font-size: 8vw;
+    }
+
+    .container_cars h2 {
+        font-size: 4vw;
+        padding-block: 4vw;
+    }
+
+    .container_compiler {
+        padding: 5vw 5vw;
+        flex-direction: column;
+        gap: 5vw;
+    }
+
+    .container_compiler .item {
+        padding: 5vw;
+        height: 70vw;
+    }
+
+    .item img {
+        width: 100%;
+    }
+
+    .suv_info p {
+        font-size: 6vw;
+        margin-block-start: 3vw;
+    }
+
+    .suv_info p:not(:first-child) {
+        font-size: 4vw;
+    }
+
+    .suv_info li {
+        font-size: 4vw;
+        margin-block-start: 2vw;
+    }
+
+    /* SERVICES */
+    .container {
+        flex-direction: column;
+        gap: 7vw;
+
+    }
+
+    .services_item img {
+        width: 30vw;
+    }
+
+    .services_item:last-of-type img {
+        width: 29vw;
+    }
+
+    .services_item p {
+        margin-top: 5vw;
+    }
+
+    /* FOOTER */
+    footer {
+        margin-top: 20vw;
+        padding: 0 5vw 0vw 5vw;
+    }
+
+    .parent_footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 5vw;
+        padding-block: 5vw;
+    }
+
+    .parent_footer img {
+        width: 30vw;
+        margin-right: 0;
+    }
+}
